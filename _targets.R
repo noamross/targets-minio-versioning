@@ -42,7 +42,7 @@ lapply(list.files("R", full.names = TRUE, recursive = TRUE), source)
 list(
   tar_target(
     name = data,
-    command = data.frame(x = rnorm(100), y = rnorm(100))
+    command = data.frame(x = rnorm(1000), y = rnorm(1000))
     #   format = "feather" # efficient storage of large data frames # nolint
   ),
   tar_target(
