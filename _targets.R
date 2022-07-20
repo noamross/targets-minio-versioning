@@ -1,8 +1,3 @@
-# Created by use_targets().
-# Follow the comments below to fill in this target script.
-# Then follow the manual to check and run the pipeline:
-#   https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline # nolint
-
 # Load packages required to define the pipeline:
 library(targets)
 
@@ -33,17 +28,14 @@ if (try(s3_service$get_bucket_versioning(s3_bucket)$Status) == "Enabled") {
 }
 
 
-# tar_make_future() configuration (okay to leave alone):
-# Install packages {{future}}, {{future.callr}}, and {{future.batchtools}} to allow use_targets() to configure tar_make_future() options.
-
+# Load any R functions
 lapply(list.files("R", full.names = TRUE, recursive = TRUE), source)
 
-# Replace the target list below with your own:
+# Define some targets
 list(
   tar_target(
     name = data,
     command = data.frame(x = rnorm(2000), y = rnorm(2000))
-    #   format = "feather" # efficient storage of large data frames # nolint
   ),
   tar_target(
     name = model,

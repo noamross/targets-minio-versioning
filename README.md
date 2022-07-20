@@ -90,7 +90,7 @@ mserver$kill()
 If you also want to share your targets data via piggyback, you can pull and push
 it like so. You'll nee
 
-```
+```r
 zip("minio_storage.zip", list.files("minio_storage", recursive=TRUE, all.files = TRUE, full.names = TRUE))
 piggyback::pb_new_release(repo = "YOUR_NAMESPACE/YOUR_REPO", "YOUR_TAG") # Only need to do this once
 piggyback::pb_upload("minio_storage.zip", repo = "YOUR_NAMESPACE/YOUR_REPO")
