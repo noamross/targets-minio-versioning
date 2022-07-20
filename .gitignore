@@ -3,6 +3,7 @@
 .Rhistory
 .RData
 .Ruserdata
+minio_storage.zip
 minio_storage/*
 !minio_storage/.gitkeep
 

@@ -23,7 +23,7 @@ s3_service <- paws::s3(
            ))))
 
 cat(s3_service$get_bucket_versioning(s3_bucket)$Status)
-if (s3_service$get_bucket_versioning(s3_bucket)$Status == "Enabled") {
+if (try(s3_service$get_bucket_versioning(s3_bucket)$Status) == "Enabled") {
   tar_option_set(resources = tar_resources(
     aws = tar_resources_aws(
       endpoint = s3_endpoint,
