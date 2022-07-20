@@ -87,7 +87,7 @@ mserver$kill()
 ```
 
 If you also want to share your targets data via piggyback, you can pull and push
-it like so. You'll nee
+it like so. You'll need your own repository to create releases to attach data to.
 
 ```r
 zip("minio_storage.zip", list.files("minio_storage", recursive=TRUE, all.files = TRUE, full.names = TRUE))
@@ -95,10 +95,10 @@ piggyback::pb_new_release(repo = "YOUR_NAMESPACE/YOUR_REPO", "YOUR_TAG") # Only 
 piggyback::pb_upload("minio_storage.zip", repo = "YOUR_NAMESPACE/YOUR_REPO")
 ```
 
-`piggyback` attaches the data to GitHub releases and this has a 2GB size limit. 
+`piggyback` attaches the data to GitHub releases, which have a 2GB size limit. 
 As the storage directory stores every version of your objects, it can get quite large and it may not
 be practical to share it this way.  You can prune your versions via the `min.io` web
 interface.
 
 However, if you have a shared server, you can use `min.io` on it so your
-team can share object versions without pushing or pulling.
+team can share object versions without pushing or pulling or connecting externally to AWS.
