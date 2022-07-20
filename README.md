@@ -26,13 +26,14 @@ This repo demonstrates using min.io for versioning on your local machine.
 -   Clone this repository
 -   Bootstrap packages and data.  Start a session and run:
 
-    ```R
-    renv::restore() # Install relevant packages
-    piggyback::pb_download("minio_storage.zip") # Fetch the min.io data
-    unzip("minio_stroage.zip")
-    ```
-    This creates a `minio_storage` folder (gitignore'd) which will contain the 
-    contents of your local S3 bucket
+```r
+renv::restore() # Install relevant packages
+piggyback::pb_download("minio_storage.zip") # Fetch the min.io data
+unzip("minio_storage.zip")
+```
+
+This creates a `minio_storage` folder (gitignore'd) which will contain the 
+contents of your local S3 bucket
 
 Now, start a min.io server:
 
@@ -64,7 +65,7 @@ We can do the same moving to a different commit.  In the shell, go to an old
 version of the code:
 
 ```bash
-git checkout f9d9
+git checkout 
 ```
 
 Now run `targets::tar_make()` again.  The targets should still skip! 
