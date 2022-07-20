@@ -44,7 +44,7 @@ mserver <- processx::process$new(
 ```
 
 This serves an S3 endpoint at local port 9000. You can the visit the web interace for your min.io server at <http://localhost:9090/>.  The default login
-and password are both `minioadmin`.  In this case, the server alread has a bucket  with versioning turned on ("targets-versioned"), and a set of credentials ("testcreds"/"testcreds")
+and password are both `minioadmin`.  In this case, the server already has a bucket  with versioning turned on ("targets-versioned"), and a set of credentials ("testcreds"/"testcreds") as server configuration was downloaded along with data.
 
 If you were starting your own new project, you could admin credentials with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables, create your own bucket, and create a more secure set of credentials under `Identity > Service Accounts`.
 
