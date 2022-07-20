@@ -10,7 +10,7 @@ linked version control between code, data, and code-generated objects.
 
 `{targets}` can use AWS S3 storage to store objects generated, and with S3 bucket
 versioning enabled, [it can store all versions of targets](https://books.ropensci.org/targets/data.html#data-version-control).
-If you then version the `_targets/meta/meta` with your code, targets will fetch
+If you then version the `_targets/meta/meta` file with your code, targets will fetch
 object versions matching your code.
 
 However, for cost, security, or connectivity reasons, it may not make sense to
