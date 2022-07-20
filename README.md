@@ -29,7 +29,7 @@ This repo demonstrates using min.io for versioning on your local machine.
     ```R
     renv::restore() # Install relevant packages
     piggyback::pb_download("minio_storage.zip") # Fetch the min.io data
-    unzip("minio_stroage.zip")
+    unzip("minio_storage.zip")
     ```
     This creates a `minio_storage` folder (gitignore'd) which will contain the 
     contents of your local S3 bucket
